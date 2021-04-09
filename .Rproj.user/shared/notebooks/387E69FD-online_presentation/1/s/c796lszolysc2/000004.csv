@@ -1,0 +1,33 @@
+"2","Warning messages:
+"
+"2","1: "
+"2","In prose_index(x) :"
+"2"," Code fences are not balanced
+"
+"2","2: "
+"2","In prose_index(x) :"
+"2"," Code fences are not balanced
+"
+"0","---"
+"0",""
+"0","#EXTRA CODES:"
+"0","#```{r, out.width= '85%', fig.cap = 'caption'}"
+"0","#include_url(""https://www.nature.com/articles/tp2017207.pdf"")"
+"0",""
+"0","#Some text ![:scale 70px](../img/emo/bye.png)"
+"0",""
+"0","#.center["
+"0","#![:scale 150px](../img/emo/bye.png)"
+"0","#]"
+"2","Error: Incomplete expression: ---
+
+#EXTRA CODES:
+#```{r, out.width= '85%', fig.cap = 'caption'}
+#include_url(""https://www.nature.com/articles/tp2017207.pdf"")
+
+#Some text ![:scale 70px](../img/emo/bye.png)
+
+#.center[
+#![:scale 150px](../img/emo/bye.png)
+#]
+"

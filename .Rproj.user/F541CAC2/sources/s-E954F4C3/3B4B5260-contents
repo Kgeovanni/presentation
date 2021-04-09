@@ -1,0 +1,28 @@
+d <- iris
+d
+
+# model 1
+Model1 <- lm(Petal.Length ~ Sepal.Length, data = d)
+
+
+plot(Petal.Length ~ Sepal.Length, data = d)
+abline(Model1)
+
+
+Model2 <- lm(Petal.Length ~ Sepal.Width, data = d)
+
+plot(Petal.Length ~ Sepal.Width, data = d)
+abline(Model2)
+
+Model3 <- lm(Petal.Length ~ Sepal.Length + Sepal.Width, data = d)
+Model4 <- lm(Petal.Length ~ Sepal.Length * Sepal.Width, data = d)
+summary(Model1)
+
+summary(Model2)
+
+summary(Model3)
+
+summary(Model4)
+
+hist(Model1$residuals)
+plot(Model1)

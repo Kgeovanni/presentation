@@ -1,0 +1,59 @@
+
+## DIANA'S CODES
+
+## Open these up and run them prior to codes
+```{r setup, echo = FALSE, include = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(xaringan)
+library(patchwork) #makes ggplots nicer
+devtools::install_github("gadenbuie/xaringanExtra")
+```
+#Let's you view your HTML in the Viewer. Add this code to your Console:
+> xaringan::inf_mr()
+
+# View Presenter Notes
+???
+  
+  
+  class: center, middle
+# Article Summary
+my name is Diana Sanchez
+>email@rutgers
+
+.left[and babies.]
+.center[words]
+.right[words]
+
+----
+  .center[
+    ![:scale 70px](https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png)
+  ]
+
+```{r, out.width ='15%', fig.align ='right'}
+knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
+```
+
+![:scale 550px](https://drive.google.com/uc?export=view&id=1vcA98cLwvruGuvep00QlBhZ5idxejxso)
+
+
+#EXTRA CODES:
+#```{r, out.width= '85%', fig.cap = 'caption'}
+#include_url("https://www.nature.com/articles/tp2017207.pdf")
+
+#Some text ![:scale 70px](../img/emo/bye.png)
+
+#.center[
+#![:scale 150px](../img/emo/bye.png)
+#]
+---
+
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+---
+title: "Aptitude and Age, Factors Influencing Second Language Acquisition"
+author: "Diana Sanchez"
+date: "Due Date: April 1, 2021"
+output: 
+   html_document:
+    bibliography: references.bib
+    theme: journal
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    collapsed: false
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(lme4)
+```
+
+## Language Acquisition Study
+
+
+![](https://www.perfectlancer.com/blog/wp-content/uploads/2020/01/370211-PBZD42-64.jpg)
+This study investigated how different people learn a second language. This research aimed to determine if age and language aptitude are good indicators of language acquisition. Previous studies have shown that children and adults can become proficient in learning a second language at any age. Additional studies found that specific individuals' cognitive abilities predict how well they acquire a second language. In this study, we hypothesized that people learn languages better as a result of their language aptitude. We also concluded that younger (before puberty) people learn languages better than older people (over 20 years old). A total of 200 language learners (100 young, 100 older) participated in this study. Each participant completed an IQ test, a language aptitude test, and a language proficiency test.  
+
+***The following steps were completed to analyze our results.***
+
+### Dataset Loaded
+The dataset was loaded to the folder called "data_raw." The first six rows of the raw data are documented below. We used the head() code to get the data frame.
+```{r, load-data}
+data_raw <- read_csv("./data_raw/lang_data_raw.csv")
+
+head(data_raw) %>% 
+  kbl(caption = "First Six Rows of Raw Data") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+### Tidy the Dataset
+Hadley Wickham (2014) states that tidy data provide the user with opportunities to "organize data" in meaningful ways so that it can facilitate research analysis.
+
+After reviewing our raw dataset, it was determined that we needed to separate column "id" into three columns or values:
+
+* ID Number
+* Age (old/young)
+* Sex (male/female)
+
+We used the separate() code to split the data from column "id" in the data_raw. We created another chart with our tidy data, this is called data_tidy.
+```{r, split-columns}
+data_tidy <- data_raw %>% 
+  separate(., col = "id", into = c("ID", "Sex", "Age"), sep = "_")
+```
+
+### Composite Scores
+We developed a composite language learning score for each participant. We took the log of "iq" and divided it by 80 and added the "motivation." The new column was created in data_tidy and is called "composite_score."
+```{r, composite-score}
+data_tidy <- data_tidy %>%
+  mutate(composite_score = (log(iq)/80) + log(motivation))
+
+head(data_tidy) %>% 
+  kbl() %>% 
+  kable_styling()
+```
+
+### Standardize Variables
+We reviewed the tidy data and decided to standardize the data, "composite_score" so that we can compare variables. This would allow us to look at scores in a scale and use the standard deviation to observe where the data falls (above or below) in regards to the mean. 
+
+```{r, standardize}
+ data_tidy <- data_tidy %>%
+  mutate(composite_score_std = (composite_score - mean(composite_score))/sd(composite_score))
+```
+
+### Tidy Data Exploration
+I decided to continue to explore data_tidy using head(), tail(), psych::describe, and summary() functions.
+```{r, data_exploration}
+head(data_tidy) %>%
+  kbl(caption = "First Part of Data Frame") %>%
+     kable_classic(full_width = F, html_font = "Cambria")
+
+tail(data_tidy) %>% 
+  kbl(caption = "Last Part of Data Frame") %>% 
+     kable_classic(full_width = F, html_font = "Cambria")
+
+psych::describe(data_tidy) %>% 
+  kbl(caption = "Descriptive Data") %>% 
+    kable_classic(full_width = F, html_font = "Cambria")
+
+summary(data_tidy) %>% 
+  kbl(caption = "Summary of Data") %>% 
+    kable_classic(full_width = F, html_font = "Cambria")
+```
+
+### Descriptive Statistics
+The following descriptive statistics were created and analyzed by Age Group. We gathered the mean for composite_score and proficiency. We also looked at the standard deviation for composite_score and proficiency. We completed this task by using the summarize() function to calculate the average and the standard deviation.
+```{r, descriptive-statistics}
+descriptive_data <- data_tidy %>% 
+  group_by(Age) %>% 
+    summarize(Mean_Composite = mean(composite_score), SD_Composite = sd(composite_score), Mean_Proficiency = mean(prof), SD_Proficiency = sd(prof))
+
+descriptive_data %>% 
+  kbl(caption = "Descriptive Statistics: Early & Late Language Learners by Proficiency and Composite Score") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+### Informative Plot of Data
+Second language acquisition data was investigated using a linear model. The plot below compares the composite language learning ability metric which includes motivation and IQ data with language proficiency score. Review of data results indicate that the younger group who learned a second language before puberty maintained a higher proficiency rate than the older group who learned a second language after the age of twenty.This can be observed by looking at the difference between the two slopes (younger/older); the younger group has a greater language proficiency score than the older group.
+
+We can further analyze the graph by looking at specific points. An image of these plots is provided below.
+
+![Comparing two plots](https://drive.google.com/uc?export=view&id=1VmxNAHe-wgjBpR4TFdLt2miP-vmRIhoJ)
+
+If we look at two points on the Composite Score at 0.2, we can conclude that the older group and the younger group variables show differences in their language proficiency. The older age group has a language proficiency of 0.5 and the younger age group has a language proficiency score of about 0.85. The younger group member has a higher language proficiency score than the older group member. We can further conclude that based on these two points, the the younger group member learned a second language better than the older group member regardless of the composite score. 
+
+The data was plotted using ggplot() function.
+```{r, plot-data}
+data_tidy %>%
+  ggplot(aes(x = composite_score, y = prof, color = Age)) + xlim(0, 17) +
+  geom_point(position = position_jitter(2), size = 1.5) +
+  geom_smooth(method = lm, se = FALSE, fullrange = TRUE) +
+  scale_y_continuous(breaks = seq (0, 1, 0.2),
+                     limits = c(0, 1)) +
+  scale_x_continuous(breaks = seq (0.2, 0.5, 0.1),
+                     limits = c(0.2, 0.5)) +
+  labs(x = "Composite Score (motivation+IQ)", y = "Language Proficiency Score", 
+       title = "Composite Language Learning Ability Metric - Age and Language Aptitude", 
+       color = "Age Group") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+
+### Fit the Model
+The lm function was used to calculate a regression model. The target variable "prof" and the predictor variable "Age" and "composite_score_std." We used "*" for both main effects and interactions.
+```{r, fit-model}
+experimental_output <- lm(prof ~ Age * composite_score_std, data = data_tidy)
+```
+
+### Model Summary
+We used the summary() function to print a summary statistics for experimental_output. The intercept for AgeOlder is 0.53900. The model predicts that for each Younger participant, the proficiency level increases by 0.12610 for each composite score. We also see from the data below that there was an interaction between Ageyounger and composite_score_std (+/-0.04821).
+```{r, model-summary}
+summary(experimental_output) 
+```
+
+
+### Diagnostics
+The diagnosis() function was used in analyzing the residuals. The following graphs were plotted:
+
+* Residuals as a function of fitted values
+* Histogram of the residuals
+* A QQ-plot of the residuals
+
+In order to determine if residuals are normally distributed as  per may research on this topic, I looked at the histogram and determined that it looks like a bell-curve. Also the QQ-plot has most points on or near the line which indicate that the residuals may be normally distributed.
+```{r, plot-diagnostics}
+ds4ling::diagnosis(experimental_output)
+summary(experimental_output)
+```
+
+
+### Results
+The present study attempted to investigate how different people learn a second language. This research aimed to determine if age and language aptitude were good indicators of language acquisition. We hypothesized that people learn languages better as a result of their language aptitude and that younger (before puberty) people learn languages better than older people (over 20 years old). The Model Summary indicated an interaction between Younger Age Group and Composite Score (0.09529). PValues were judged to be "significant" indicating that the hypothesis is "true."
+We also reported the two different R2, Multiple R-squared:  0.4526 and Adjusted R-squared:  0.4443.
+
+Disclosure: I am going to move away from using the terms "significant" and "true". This is a process and I will work on improving these terms.
+
+### Thank you!
+A huge thank you to Patrick and Kaylee! Patrick showed us some fantastic codes, and Kaylee was great at reminding us of the simplicity of tidying the data! Kyle was also helpful with codes and helping us understand lm and glm better.
+
+In terms of my next steps, I want to continue to improve using R to analyze data and getting better at analyzing in general. I have learned a lot this semester. Thank you!
+
+### References
+Wickham, H. (2014). Tidy Data. Journal of Statistical Software, 59(10), 1 - 23. doi:http://dx.doi.org/10.18637/jss.v059.i10
