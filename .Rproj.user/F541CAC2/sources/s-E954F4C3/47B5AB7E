@@ -1,20 +1,20 @@
 {
-    "id": "BC0F3853",
+    "id": "47B5AB7E",
     "path": "~/Desktop/RCODE/presentation/online_presentation.Rmd",
     "project_path": "online_presentation.Rmd",
     "type": "r_markdown",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1617525119365.0,
+    "created": 1617972638182.0,
     "source_on_save": false,
-    "relative_order": 1,
+    "relative_order": 4,
     "properties": {
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "202,36",
-        "scrollLine": "186",
+        "cursorPosition": "42,3",
+        "scrollLine": "0",
         "last_setup_crc32": "E954F4C36b2b4588"
     },
     "folds": "",
@@ -22,7 +22,7 @@
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1617939800405,
+    "last_content_update": 1617939800,
     "read_only": false,
     "read_only_alternatives": []
 }
