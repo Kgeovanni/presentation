@@ -20,6 +20,7 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 library(xaringan)
+library(xaringanExtra)
 devtools::install_github("gadenbuie/xaringanExtra")
 ```
 

@@ -1,0 +1,1 @@
+{"frames":[],"message":"Error: Incomplete expression: ---\n\n#EXTRA CODES:\n#```{r, out.width= '85%', fig.cap = 'caption'}\n#include_url(\"https://www.nature.com/articles/tp2017207.pdf\")\n\n#Some text ![:scale 70px](../img/emo/bye.png)\n\n#.center[\n#![:scale 150px](../img/emo/bye.png)\n#]\n"}
