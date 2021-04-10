@@ -13,7 +13,6 @@ output:
       countIncrementalSlides: false
       ratio: "16:9"
 ---
-
 ```{r setup, echo=FALSE, include=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
@@ -31,21 +30,30 @@ class: center, middle
 email| ds1731@rutgers.edu
 
 ---
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 
+```{r, out.width= "400px", fig.align='center'}
+knitr::include_graphics("https://i1.rgstatic.net/publication/319911820_An_evaluation_of_the_effects_of_intensity_and_duration_on_outcomes_across_treatment_domains_for_children_with_autism_spectrum_disorder/links/5fb392bc45851518fdacd42a/largepreview.png")
+```
 https://www.nature.com/articles/tp2017207.pdf
-
 ---
-
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Article Summary
 
-Linstead, Dixon, Hong, Burns, French, Novack, and Granspeesheh (2017) conducted a study to investigate treatment approach via Applied Behavior Analysis (ABA). The researchers aimed to explore if treatment **intensity** (treatment hours) and **duration** (months in treatment) influence specific learning outcomes (academic, adaptive, cognitive, executive function, language, motor, play, and social) ine eight domains. A total of 1,468 participants (18-mths to 12-yo) diagnosed with autism or pervasive development disorder-not otherwise specified (PDD-NOS) were recruited for this study. Results indicated that treatment intensity and duration interacted across all eight treatment domains. They further concluded that academic and language categories had the most robust interaction.
+Linstead, Dixon, Hong, Burns, French, Novack, and Granspeesheh (2017) conducted a study to investigate treatment approach via Applied Behavior Analysis (ABA). The researchers aimed to explore if treatment **intensity** (treatment hours) and **duration** (months in treatment) influence specific learning outcomes (academic, adaptive, cognitive, executive function, language, motor, play, and social) ine eight domains. 
 
+A total of 1,468 participants (18-mths to 12-yo) diagnosed with autism or pervasive development disorder-not otherwise specified (PDD-NOS) were recruited for this study. 
+
+Results indicated that treatment intensity and duration interacted across all eight treatment domains. They further concluded that academic and language categories had the most robust interaction.
 ---
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Methods: Explanation of Analysis
-
-What did they do? 
 
 * A Multiple linear regression was completed to model the linear relationship between the independent and dependent variables. 
 
@@ -54,10 +62,10 @@ What did they do?
 * The authors included "unstandardized regression parameters" which was identified as Table 2. This means that the data in Table 2 was obtained after running a regression model on variables at their original state (raw data).
 
 ---
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Methods: Explanation of Analysis
-
-How did they do it?
 
 * They included all 1468 participants from Arizona, California, Colorado, Illinois, Lousiana, New York, Texas, and Virginia states. 
 
@@ -88,10 +96,10 @@ Below are the adjusted means for each:
 * A two-dimensional scattered plot was created for each learning domain to compare intensity and duration, Figure 1.
 
 ---
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Methods: Explanation of Analysis
-
-Why did they do it?
 
 * The researchers wanted to know *How treatment intensity and duration impact learning across different treatment domains?*
 
@@ -101,29 +109,43 @@ Why did they do it?
 
 --
 
-* The authors also reported on unstandardized regression parameters because they wanted to compare each effect of x and Y. They did this after running a regression model on variables measured in their raw state.
+* The authors also reported on unstandardized regression parameters, Table 1 because they wanted to compare each effect of x and Y. They did this after running a regression model on variables measured in their raw state.
 
+```{r, out.width= "400px"}
+knitr::include_graphics("https://kgeovanni.github.io/presentation2/table.png")
+```
 ---
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Appropriateness of Analysis
-
+.pull-left[
 **Two-dimensional linear model.** Given what I learned in class, I do not think this was the best approach for the following reasons: 
 
-* Individuals will naturally make progress with time. Based on their variables and procedures, it is difficult to agree that their progress in learning objectives was only met as a result of intensity and duration. 
+* Individuals will naturally make progress with time. Based on their variables and procedures, it is difficult to agree that their progress in learning objectives was only met as a result of intensity and duration.
+
 * Violates rule for using linear regression analysis. Figure 1 demonstrates many "significant outliers." There are several points in the scatterplot that are far from the regression line which implies a large residual effect. This can be problematic as it can impact or reduce the fit of the regression.
-* Violates rule for using linear regression analysis. The data should show "homoscedasticity." This means that the data should remain constant (i.e., same) along the fit line. The scatterplots in Figure 1, instead show heteroscedasticity. The plots skew to the left and some appear to be on 0. For example scatterplot for intesity and adaptive; the data appears to be exactly on zero.
+]
+
+.pull-right[
+```{r, out.width= "500px"}
+knitr::include_graphics("https://kgeovanni.github.io/presentation2/plot.png")
+```
+]
+---
+# Appropriateness of Analysis
+
+.pull-left[* Violates rule for using linear regression analysis. The data should show "homoscedasticity." This means that the data should remain constant (i.e., same) along the fit line. The scatterplots in Figure 1, instead show heteroscedasticity. The plots skew to the left and some appear to be on 0. For example scatterplot for intesity and adaptive; the data appears to be exactly on zero.
 * Residual Error. Most of the scatterplots in Figure 1 show large residual errors which can indicate that that interpretations might be incorrect. Residual plots may indicate that any data reported might be inaccurate and not trustworthy. In other words, Figure 1 shows residual plots that are random (cannot be used to predict one for another); most of the plots are skewed to the left. 
+]
 
+```{r, out.width= "500px"}
+knitr::include_graphics("https://kgeovanni.github.io/presentation2/plot.png")
+```
 ---
-
-https://drive.google.com/uc?export=view&id=1y2MNVQPv2Tdv_sHp2SMGnkhp4-cJ9nBf
-
----
-
-https://drive.google.com/uc?export=view&id=19-sJVLMwvTGxBj8p-VoRR2uu5NdJCkdc
-
----
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Appropriateness of Analysis
 
 * I believe that the authors' approach to using unstandardized regressions was not the best approach. I believe that it would have been more useful if the data on Table 2 was standardized. This would aid in the comparison of data on one scale (z scores). Standardizing the data would help in comparing the effect of the variables.
@@ -137,7 +159,9 @@ https://drive.google.com/uc?export=view&id=19-sJVLMwvTGxBj8p-VoRR2uu5NdJCkdc
 * In addition, it was reported that treatment was closely tied to funding (insurance, state laws, school IEPs) which means that intesity and duration might be affected. For example, a professional may be inclined to report progress in order to continue to gain "funding" for treatment. This could impact the accuracy reported of the accomplished goals. 
 
 ---
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Appropriateness of Analysis
 
 - Something I have not seen before....
@@ -147,7 +171,9 @@ https://drive.google.com/uc?export=view&id=19-sJVLMwvTGxBj8p-VoRR2uu5NdJCkdc
   * This was the first time that I found so many concerns with a study. Their methods and procedures could have been "cleaner." I was surprised to learn that they "fixed" the issue with intensity by adjusting hours. 
 
 ---
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Presentation of Results
 
 - The authors did not present the information well. They implied that results led to "strong linear relationship between skill acquisition and both treatment intesity and duration" (p. 3). Based on the scatterplot presented, this appears to be inaccurate. I believe if the authors attempted to look at residual errors, this would have assisted them with their interpretation.
@@ -161,7 +187,9 @@ https://drive.google.com/uc?export=view&id=19-sJVLMwvTGxBj8p-VoRR2uu5NdJCkdc
 - Also noted on page 4, the authors stated "an increase in treatment hours predicted a higher number of mastered learning objectives in children with ASD receiving community-based ABA intervention." This information appears to be inaccurate when looking at the scatterplot.
 
 ---
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # Final Thoughts...
 
 .pull-left[
@@ -181,16 +209,10 @@ https://drive.google.com/uc?export=view&id=19-sJVLMwvTGxBj8p-VoRR2uu5NdJCkdc
 * Their enthusiasm to capture a range of skills by many individuals.
 
 ]
-
 ---
-Class: center, middle
-
-# Thank you for visiting. Share your thoughts below.
-
----
-
-
-
+```{r, out.width = "150px", fig.align='right'}
+knitr::include_graphics("https://i.pinimg.com/originals/4c/78/65/4c78654be43dc14f7509346806361a68.png")
+```
 # References
 
 Linstead, E., Dixon, D. R., Hong, E., Burns, C. O., French, R., Novack, M. N., & Granpeesheh, D. (2017). _An evaluation of the effects of intensity and duration on outcomes across treatment domains for children with autism spectrum disorder._ Translational psychiatry, 7(9), e1234-e1234.
