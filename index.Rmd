@@ -14,7 +14,7 @@ output:
       ratio: "16:9"
 ---
 
-```{r setup, echo = FALSE, include = FALSE, warning = FALSE}
+```{r setup, echo=FALSE, include=FALSE, warning=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(tidyverse)
 library(knitr)
@@ -24,7 +24,7 @@ library(xaringan)
 
 class: center, middle
 
-#.red[Hi] ![:scale 70px](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emoji-one/104/waving-hand-sign_emoji-modifier-fitzpatrick-type-3_1f44b-1f3fc_1f3fc.png)
+# .red[Hi]
 
 #.black[Welcome to my presentation.]
 
@@ -32,28 +32,16 @@ email| ds1731@rutgers.edu
 
 ---
 
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
-
-![:scale 630px](https://drive.google.com/uc?export=view&id=1vcA98cLwvruGuvep00QlBhZ5idxejxso)
-
 https://www.nature.com/articles/tp2017207.pdf
 
 ---
 
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
+
 # Article Summary
 
 Linstead, Dixon, Hong, Burns, French, Novack, and Granspeesheh (2017) conducted a study to investigate treatment approach via Applied Behavior Analysis (ABA). The researchers aimed to explore if treatment **intensity** (treatment hours) and **duration** (months in treatment) influence specific learning outcomes (academic, adaptive, cognitive, executive function, language, motor, play, and social) ine eight domains. A total of 1,468 participants (18-mths to 12-yo) diagnosed with autism or pervasive development disorder-not otherwise specified (PDD-NOS) were recruited for this study. Results indicated that treatment intensity and duration interacted across all eight treatment domains. They further concluded that academic and language categories had the most robust interaction.
 
 ---
-
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
 
 # Methods: Explanation of Analysis
 
@@ -66,10 +54,6 @@ What did they do?
 * The authors included "unstandardized regression parameters" which was identified as Table 2. This means that the data in Table 2 was obtained after running a regression model on variables at their original state (raw data).
 
 ---
-
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
 
 # Methods: Explanation of Analysis
 
@@ -105,10 +89,6 @@ Below are the adjusted means for each:
 
 ---
 
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
-
 # Methods: Explanation of Analysis
 
 Why did they do it?
@@ -125,10 +105,6 @@ Why did they do it?
 
 ---
 
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
-
 # Appropriateness of Analysis
 
 **Two-dimensional linear model.** Given what I learned in class, I do not think this was the best approach for the following reasons: 
@@ -140,17 +116,13 @@ knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019
 
 ---
 
-![:scale 630px](https://drive.google.com/uc?export=view&id=1y2MNVQPv2Tdv_sHp2SMGnkhp4-cJ9nBf)
+https://drive.google.com/uc?export=view&id=1y2MNVQPv2Tdv_sHp2SMGnkhp4-cJ9nBf
 
 ---
 
-![:scale 700px](https://drive.google.com/uc?export=view&id=19-sJVLMwvTGxBj8p-VoRR2uu5NdJCkdc)
+https://drive.google.com/uc?export=view&id=19-sJVLMwvTGxBj8p-VoRR2uu5NdJCkdc
 
 ---
-
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
 
 # Appropriateness of Analysis
 
@@ -176,10 +148,6 @@ knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019
 
 ---
 
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
-
 # Presentation of Results
 
 - The authors did not present the information well. They implied that results led to "strong linear relationship between skill acquisition and both treatment intesity and duration" (p. 3). Based on the scatterplot presented, this appears to be inaccurate. I believe if the authors attempted to look at residual errors, this would have assisted them with their interpretation.
@@ -193,10 +161,6 @@ knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019
 - Also noted on page 4, the authors stated "an increase in treatment hours predicted a higher number of mastered learning objectives in children with ASD receiving community-based ABA intervention." This information appears to be inaccurate when looking at the scatterplot.
 
 ---
-
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
 
 # Final Thoughts...
 
@@ -225,9 +189,7 @@ Class: center, middle
 
 ---
 
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
+
 
 # References
 
@@ -235,10 +197,6 @@ Linstead, E., Dixon, D. R., Hong, E., Burns, C. O., French, R., Novack, M. N., &
 
 ---
 class: center, middle
-
-```{r, out.width='15%', fig.align='right'}
-knitr::include_graphics('https://cdn.freelogovectors.net/wp-content/uploads/2019/01/rutgers-logo_university.png')
-```
 
 ```{r out.width = '60%'}
 knitr::include_graphics("https://nadc.org.uk/wp-content/uploads/2020/04/Thankyou.jpg")
